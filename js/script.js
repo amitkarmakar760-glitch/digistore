@@ -47,7 +47,7 @@ const PRODUCTS = [
   price:99,
   oldPrice:299,
   rating:5.0,
-  reviews:0,F
+  reviews:0,
   badge:"new",
   color:"#2D5BFF,#5C8DFF",
   link:"#"
