@@ -47,7 +47,7 @@ const PRODUCTS = [
   price:99,
   oldPrice:299,
   rating:5.0,
-  reviews:0,
+  reviews:0,F
   badge:"new",
   color:"#2D5BFF,#5C8DFF",
   link:"#"
@@ -90,7 +90,7 @@ function productCardHTML(p, index){
 
   return `
   <article class="card reveal" style="animation-delay:${(index % 6) * 0.06}s" data-category="${p.category}" data-title="${p.title.toLowerCase()}" data-price="${p.price}">
-    <div class="card-media" style="background:linear-gradient(135deg, ${c1}, ${c2})">
+    <div class="card-media" style="background:${p.image ? `url('${p.image}') center/cover no-repeat` : `linear-gradient(135deg, ${c1}, ${c2})`}">
       <div class="badge-row">${badges.join("")}</div>
       <button class="wishlist-btn${wishlisted ? " active" : ""}" aria-label="Add to wishlist" onclick="toggleWishlist(${p.id}, this)">
         <svg viewBox="0 0 24 24" fill="${wishlisted ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.8 9 2 5.5 5.3 4.6 7.6 4 9.9 5 12 7.3 14.1 5 16.4 4 18.7 4.6 22 5.5 23.2 9 21.5 12.5 19 16.65 12 21 12 21z"/></svg>
