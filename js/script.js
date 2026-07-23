@@ -50,7 +50,8 @@ const PRODUCTS = [
   reviews:0,
   badge:"new",
   color:"#2D5BFF,#5C8DFF",
-  link:"#"
+  image:"images/artificial-intelligence-in-digital-marketing-cover.png",
+   link:"#"
 }
 ];
 
