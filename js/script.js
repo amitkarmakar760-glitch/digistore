@@ -35,7 +35,23 @@ const PRODUCTS = [
   { id:17, category:"courses", tag:"COURSE", title:"Python for Absolute Beginners", desc:"A 10-hour beginner course building 5 mini projects from scratch.", price:1599, oldPrice:2499, rating:4.9, reviews:412, badge:"best", color:"#0A0A0A,#3A3A3F", link:"YOUR_INSTAMOJO_LINK_17" },
   { id:18, category:"templates", tag:"TEMPLATE", title:"Notion Habit Tracker", desc:"A clean, gamified habit and goal tracker template for daily use.", price:199, oldPrice:399, rating:4.6, reviews:121, badge:"", color:"#FF4D6D,#FF8CA0", link:"YOUR_INSTAMOJO_LINK_18" },
   { id:19, category:"notes", tag:"NOTES", title:"Machine Learning Interview Notes", desc:"Core ML concepts and common interview questions, explained briefly.", price:299, oldPrice:599, rating:4.7, reviews:94, badge:"new", color:"#2D5BFF,#5C8DFF", link:"YOUR_INSTAMOJO_LINK_19" },
-  { id:20, category:"bundles", tag:"BUNDLE", title:"Complete Career Starter Bundle", desc:"Resume kit, interview notes, and two eBooks bundled for job seekers.", price:899, oldPrice:1799, rating:4.8, reviews:203, badge:"best", color:"#1C9A5B,#4FC98A", link:"YOUR_INSTAMOJO_LINK_20" },
+
+{ id:20, category:"bundles", tag:"BUNDLE", title:"Complete Career Starter Bundle", desc:"Resume kit, interview notes, and two eBooks bundled at one price.", price:899, oldPrice:1799, rating:4.8, reviews:203, badge:"best", color:"#1C9A5B,#4FC98A", link:"YOUR_INSTAMOJO_LINK_20" },
+
+{
+  id:21,
+  category:"ebooks",
+  tag:"EBOOK",
+  title:"Artificial Intelligence in Digital Marketing",
+  desc:"A complete practical guide to using Artificial Intelligence for modern digital marketing, content creation, automation and business growth.",
+  price:99,
+  oldPrice:299,
+  rating:5.0,
+  reviews:0,
+  badge:"new",
+  color:"#2D5BFF,#5C8DFF",
+  link:"#"
+}
 ];
 
 const CATEGORY_LABELS = { ebooks:"eBooks", courses:"Video Courses", templates:"Templates", notes:"Notes", bundles:"Bundles" };
