@@ -3,172 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DigiStore — Ebooks & Courses, Delivered Instantly</title>
+<title>DigiStore — Premium Digital Products for Students & Professionals</title>
+<meta name="description" content="DigiStore sells premium eBooks, video courses, templates, notes, and bundles with instant download and secure payments. Trusted by 1000+ happy customers.">
+<meta name="keywords" content="digital products, ebooks, online courses, templates, notes, bundles, instant download, DigiStore">
+<link rel="canonical" href="https://www.digistore.example/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="DigiStore">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DigiStore — Premium Digital Products for Students & Professionals">
+<meta property="og:description" content="Premium eBooks, courses, templates, notes and bundles. Instant download, secure payments, lifetime access.">
+<meta property="og:url" content="https://www.digistore.example/">
+<meta property="og:site_name" content="DigiStore">
+<meta property="og:image" content="https://www.digistore.example/images/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DigiStore — Premium Digital Products for Students & Professionals">
+<meta name="twitter:description" content="Premium eBooks, courses, templates, notes and bundles. Instant download, secure payments, lifetime access.">
+<meta name="twitter:image" content="https://www.digistore.example/images/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#FFFFFF;
-    --surface:#F6F6F7;
-    --ink:#0A0A0A;
-    --ink-soft:#55555B;
-    --line:#E4E4E7;
-    --accent:#2D5BFF;
-    --accent-ink:#FFFFFF;
-    --radius:14px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif; letter-spacing:-0.02em;}
-  .mono{font-family:'IBM Plex Mono',monospace;}
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+<link rel="stylesheet" href="css/style.css">
 
-  /* Header */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px;}
-  .logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;}
-  .logo-mark{width:34px; height:34px; border-radius:9px; background:var(--ink); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .logo-mark svg{width:18px; height:18px;}
-  .logo span.store{color:var(--accent);}
-  nav.links{display:flex; gap:32px; align-items:center;}
-  nav.links a{font-size:14.5px; color:var(--ink-soft); transition:color .15s;}
-  nav.links a:hover{color:var(--ink);}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:11px 20px; border-radius:999px;
-    font-size:14.5px; font-weight:600;
-    border:1px solid var(--ink);
-    transition:transform .15s ease, background .15s ease, color .15s ease;
-  }
-  .btn-primary{background:var(--ink); color:#fff;}
-  .btn-primary:hover{background:var(--accent); border-color:var(--accent); transform:translateY(-1px);}
-  .btn-ghost{border-color:var(--line); color:var(--ink);}
-  .btn-ghost:hover{border-color:var(--ink); transform:translateY(-1px);}
-  .btn-accent{background:var(--accent); color:#fff; border-color:var(--accent);}
-  .btn-accent:hover{background:#1c46e0; transform:translateY(-1px);}
-
-  @media (max-width:760px){ nav.links{display:none;} }
-
-  /* Hero */
-  .hero{padding:96px 24px 64px;}
-  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;}
-  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-soft);
-    border:1px solid var(--line); border-radius:999px; padding:6px 12px; margin-bottom:22px;
-  }
-  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--accent);}
-  .hero h1{font-size:56px; line-height:1.04; font-weight:700; margin-bottom:20px;}
-  @media (max-width:600px){ .hero h1{font-size:38px;} }
-  .hero p.sub{font-size:18px; color:var(--ink-soft); max-width:460px; margin-bottom:32px;}
-  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
-
-  /* receipt card - signature element */
-  .receipt{
-    background:var(--ink); color:#fff; border-radius:18px; padding:26px;
-    font-family:'IBM Plex Mono',monospace; font-size:13.5px;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.35);
-    transform:rotate(1.5deg);
-  }
-  .receipt .rline{display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dashed rgba(255,255,255,0.15); color:rgba(255,255,255,0.75);}
-  .receipt .rline:last-child{border-bottom:none;}
-  .receipt .rhead{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;}
-  .receipt .status{color:#6fe08a; font-weight:500;}
-  .receipt .total{color:#fff; font-weight:600;}
-
-  /* Sections */
-  section{padding:72px 24px;}
-  .section-head{margin-bottom:44px; max-width:600px;}
-  .section-head .eyebrow{margin-bottom:14px;}
-  .section-head h2{font-size:34px; margin-bottom:10px;}
-  .section-head p{color:var(--ink-soft); font-size:16px;}
-
-  /* Product grid */
-  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
-
-  .card{
-    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
-    background:var(--surface); display:flex; flex-direction:column; transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .card:hover{transform:translateY(-4px); box-shadow:0 20px 40px -24px rgba(0,0,0,0.25);}
-  .card-top{padding:22px 22px 0;}
-  .card-tag{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--accent); background:rgba(45,91,255,0.08); display:inline-block; padding:4px 10px; border-radius:999px; margin-bottom:14px;}
-  .card h3{font-size:19px; margin-bottom:8px;}
-  .card p.desc{font-size:14px; color:var(--ink-soft); margin-bottom:18px;}
-  .card-meta{
-    font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-soft);
-    padding:12px 22px; border-top:1px solid var(--line); background:#fff;
-    display:flex; justify-content:space-between; align-items:center;
-  }
-  .card-buy{padding:18px 22px; border-top:1px solid var(--line); background:#fff; display:flex; align-items:center; justify-content:space-between;}
-  .price{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px;}
-  .price span{font-size:13px; color:var(--ink-soft); font-weight:500; margin-left:4px;}
-  .buy-btn{
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:500;
-    background:var(--ink); color:#fff; padding:9px 16px; border-radius:8px;
-    transition:background .15s;
-  }
-  .buy-btn:hover{background:var(--accent);}
-
-  /* How it works */
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
-  @media (max-width:760px){ .steps{grid-template-columns:1fr;} }
-  .step{border-left:2px solid var(--line); padding-left:20px;}
-  .step .num{font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:13px; margin-bottom:10px; display:block;}
-  .step h3{font-size:18px; margin-bottom:8px;}
-  .step p{font-size:14.5px; color:var(--ink-soft);}
-
-  /* Trust strip */
-  .trust{background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .trust .wrap{display:flex; flex-wrap:wrap; gap:36px; align-items:center; justify-content:space-between; padding:28px 24px;}
-  .trust-item{display:flex; align-items:center; gap:10px; font-size:14px; color:var(--ink-soft);}
-  .trust-item svg{flex-shrink:0;}
-
-  /* FAQ */
-  .faq-item{border-bottom:1px solid var(--line); padding:20px 0;}
-  .faq-item summary{cursor:pointer; font-weight:600; font-size:16px; display:flex; justify-content:space-between; align-items:center; list-style:none;}
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary::after{content:"+"; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:20px;}
-  .faq-item[open] summary::after{content:"–";}
-  .faq-item p{color:var(--ink-soft); font-size:14.5px; margin-top:12px; max-width:640px;}
-
-  /* Footer */
-  footer{background:var(--ink); color:#fff; padding:56px 24px 28px;}
-  .footer-grid{display:grid; grid-template-columns:1.3fr repeat(3,1fr); gap:32px; margin-bottom:40px;}
-  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr 1fr;} }
-  footer .logo{color:#fff;}
-  footer .logo-mark{background:#fff;}
-  footer .logo-mark svg path, footer .logo-mark svg polyline{stroke:var(--ink);}
-  footer p.tag{color:rgba(255,255,255,0.55); font-size:14px; margin-top:12px; max-width:260px;}
-  footer h4{font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:rgba(255,255,255,0.5); margin-bottom:14px;}
-  footer ul{list-style:none;}
-  footer ul li{margin-bottom:10px;}
-  footer ul a{color:rgba(255,255,255,0.8); font-size:14.5px;}
-  footer ul a:hover{color:var(--accent);}
-  .footer-bottom{border-top:1px solid rgba(255,255,255,0.12); padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; color:rgba(255,255,255,0.45); font-size:13px; font-family:'IBM Plex Mono',monospace;}
-</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DigiStore",
+  "url": "https://www.digistore.example/",
+  "logo": "https://www.digistore.example/images/favicon.svg",
+  "description": "Premium digital products store selling eBooks, video courses, templates, notes and bundles.",
+  "email": "hello@digistore.in",
+  "sameAs": ["https://instagram.com/digistore", "https://facebook.com/digistore"]
+}
+</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="page-loader" aria-hidden="true"><div class="loader-mark"></div></div>
+<div id="scroll-progress"></div>
+
+<div class="offer-banner" id="offer-banner" role="region" aria-label="Limited time offer">
+  <strong>Flash Sale:</strong> Extra 20% off all bundles — ends in <span id="countdown"></span>
+  <button class="close-banner" id="close-banner" aria-label="Dismiss offer">✕</button>
+</div>
 
 <header>
   <div class="nav">
-    <a href="#top" class="logo">
+    <a href="index.html" class="logo">
       <span class="logo-mark">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 3V15" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -178,156 +64,213 @@
       </span>
       Digi<span class="store">Store</span>
     </a>
-    <nav class="links">
-      <a href="#products">Products</a>
-      <a href="#how">How it works</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+    <nav class="links" id="nav-links" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Products</a>
+      <a href="products.html#categories">Categories</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <a href="#products" class="btn btn-primary">Browse Products</a>
+    <div class="nav-actions">
+      <button class="icon-btn dark-toggle" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.5A9 9 0 1 1 11.5 3 7 7 0 0 0 21 12.5Z"/></svg>
+      </button>
+      <a href="products.html" class="btn btn-ghost">Browse</a>
+      <a href="products.html" class="btn btn-primary">Shop Now</a>
+      <button class="hamburger" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
 
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow"><span class="dot"></span> INSTANT DELIVERY · SECURE INSTAMOJO CHECKOUT</div>
-        <h1>Ebooks & courses, unlocked the second you pay.</h1>
-        <p class="sub">DigiStore is a one-page shop for your knowledge products. No login, no waiting — customers pay and get their file by email in seconds.</p>
+        <div class="eyebrow"><span class="dot"></span> DIGITAL PRODUCTS, DELIVERED INSTANTLY</div>
+        <h1>Premium digital products for students &amp; professionals.</h1>
+        <p class="sub">eBooks, video courses, templates, notes and bundles — built to help you learn faster and work smarter. Pay once, download instantly.</p>
         <div class="hero-actions">
-          <a href="#products" class="btn btn-primary">See what's on sale</a>
-          <a href="#how" class="btn btn-ghost">How delivery works</a>
+          <a href="products.html" class="btn btn-accent">Explore Products →</a>
+          <a href="#categories" class="btn btn-ghost">Browse Categories</a>
+        </div>
+        <div class="hero-trust">
+          <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20c0-3-2-5-5-5s-5 2-5 5M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg> 1000+ Happy Customers</span>
+          <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure Payments</span>
+          <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Instant Download</span>
         </div>
       </div>
-      <div class="receipt">
-        <div class="rhead">
-          <span>ORDER #DS-1042</span>
-          <span class="status">✓ PAID</span>
+      <div>
+        <div class="receipt">
+          <div class="rhead"><span>ORDER #DS-10482</span><span class="status">● PAID</span></div>
+          <div class="rline"><span>Freelance Design Foundations</span><span>₹1,499</span></div>
+          <div class="rline"><span>Notion for Solo Founders</span><span>₹299</span></div>
+          <div class="rline"><span>Coupon DIGI20</span><span>-₹360</span></div>
+          <div class="rline total"><span>Total</span><span class="total">₹1,438</span></div>
+          <div class="rline"><span>Delivery</span><span>Instant · Email</span></div>
         </div>
-        <div class="rline"><span>The 10-Day Copywriting Sprint</span><span>₹499</span></div>
-        <div class="rline"><span>Format</span><span>PDF · 2.1 MB</span></div>
-        <div class="rline"><span>Delivery</span><span>Instant · email</span></div>
-        <div class="rline"><span>Gateway</span><span>Instamojo</span></div>
-        <div class="rline total"><span>Total</span><span>₹499.00</span></div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
-  <div class="trust">
+  <!-- TRUST BADGES -->
+  <div class="trust-strip">
     <div class="wrap">
-      <div class="trust-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V6L12 2Z" stroke="#2D5BFF" stroke-width="1.8"/></svg>
-        Secure payments via Instamojo
-      </div>
-      <div class="trust-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14H12L11 22L20 10H12L13 2Z" stroke="#2D5BFF" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        Instant file delivery
-      </div>
-      <div class="trust-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2D5BFF" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#2D5BFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        7-day replacement guarantee
-      </div>
-      <div class="trust-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4H20V16H4V4Z" stroke="#2D5BFF" stroke-width="1.8"/><path d="M4 4L12 12L20 4" stroke="#2D5BFF" stroke-width="1.8"/></svg>
-        Support at hello@digistore.in
-      </div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Instant Delivery</div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure Payment</div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Lifetime Access</div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg> 24/7 Support</div>
     </div>
   </div>
 
-  <!-- PRODUCTS -->
+  <!-- CATEGORIES -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow"><span class="dot"></span> CATALOG</div>
+        <h2>Shop by category</h2>
+        <p>Five focused categories, all built for instant download after checkout.</p>
+      </div>
+      <div class="cat-grid">
+        <a href="products.html?category=ebooks" class="cat-card reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5v14a1 1 0 0 0 1 1h14M4 5a1 1 0 0 1 1-1h6v16H5a1 1 0 0 1-1-1V5Zm14-1a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-7V4h7Z"/></svg></div>
+          <h3>eBooks</h3><p>4 titles</p>
+        </a>
+        <a href="products.html?category=courses" class="cat-card reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3>Video Courses</h3><p>4 titles</p>
+        </a>
+        <a href="products.html?category=templates" class="cat-card reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+          <h3>Templates</h3><p>4 titles</p>
+        </a>
+        <a href="products.html?category=notes" class="cat-card reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h13l3 3v13H4Z"/><path d="M17 4v3h3"/></svg></div>
+          <h3>Notes</h3><p>4 titles</p>
+        </a>
+        <a href="products.html?category=bundles" class="cat-card reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 7 9-4 9 4-9 4-9-4Zm0 5 9 4 9-4M3 17l9 4 9-4"/></svg></div>
+          <h3>Bundles</h3><p>4 titles</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
   <section id="products">
     <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow"><span class="dot"></span> CATALOG</div>
-        <h2>Pick a product, pay, download.</h2>
-        <p>Every listing below is wired to a Instamojo payment link. Replace the sample links with your own product's Instamojo checkout URL.</p>
+      <div class="section-top-row">
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span> FEATURED</div>
+          <h2>Featured products</h2>
+          <p>A hand-picked mix from every category. Every card links straight to secure checkout.</p>
+        </div>
+        <a href="products.html" class="btn btn-ghost">View all 20 products →</a>
       </div>
+      <div class="grid" id="featured-grid"></div>
+    </div>
+  </section>
 
-      <div class="grid">
-
-        <div class="card">
-          <div class="card-top">
-            <span class="card-tag">EBOOK</span>
-            <h3>The 10-Day Copywriting Sprint</h3>
-            <p class="desc">A short, practical playbook to write sales copy that converts — with 20 fill-in-the-blank templates.</p>
-          </div>
-          <div class="card-meta"><span>PDF · 2.1 MB</span><span>62 pages</span></div>
-          <div class="card-buy">
-            <div class="price">₹499<span>/one-time</span></div>
-            <!-- Replace this href with your real Instamojo payment link -->
-            <a href="https://www.instamojo.com/@digistore/" target="_blank" rel="noopener" class="buy-btn">Buy now →</a>
-          </div>
+  <!-- COUPON BANNER -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="coupon-banner">
+        <div>
+          <strong style="font-family:'Space Grotesk',sans-serif; font-size:17px;">Get 20% off your first order</strong>
+          <p style="color:var(--ink-soft); font-size:13.5px; margin-top:4px;">Apply this code at checkout on any Instamojo product page.</p>
         </div>
-
-        <div class="card">
-          <div class="card-top">
-            <span class="card-tag">COURSE</span>
-            <h3>Freelance Design Foundations</h3>
-            <p class="desc">A 6-module video course covering client pitching, pricing, and portfolio building for new designers.</p>
-          </div>
-          <div class="card-meta"><span>MP4 + PDF · 1.4 GB</span><span>6 modules</span></div>
-          <div class="card-buy">
-            <div class="price">₹1,499<span>/one-time</span></div>
-            <a href="https://www.instamojo.com/@digistore/" target="_blank" rel="noopener" class="buy-btn">Buy now →</a>
-          </div>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span class="coupon-code" id="coupon-code">DIGI20</span>
+          <button class="copy-btn" id="copy-coupon">Copy code</button>
         </div>
-
-        <div class="card">
-          <div class="card-top">
-            <span class="card-tag">EBOOK</span>
-            <h3>Notion for Solo Founders</h3>
-            <p class="desc">A ready-to-clone Notion system for tracking tasks, content, and finances as a one-person business.</p>
-          </div>
-          <div class="card-meta"><span>PDF + template link</span><span>38 pages</span></div>
-          <div class="card-buy">
-            <div class="price">₹299<span>/one-time</span></div>
-            <a href="https://www.instamojo.com/@digistore/" target="_blank" rel="noopener" class="buy-btn">Buy now →</a>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how">
+  <!-- BEST SELLERS -->
+  <section id="bestsellers">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow"><span class="dot"></span> PROCESS</div>
-        <h2>From click to inbox in under a minute.</h2>
+        <div class="eyebrow"><span class="dot"></span> TOP RATED</div>
+        <h2>Best sellers</h2>
+        <p>The products customers come back to buy again.</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <span class="num">01 / PAY</span>
-          <h3>Choose & checkout</h3>
-          <p>Customer clicks Buy, and completes payment through Instamojo's secure checkout — cards, UPI, wallets, and netbanking all supported.</p>
+      <div class="grid" id="bestseller-grid"></div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow"><span class="dot"></span> WHY DIGISTORE</div>
+        <h2>Why choose DigiStore</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.9 6.3 6.9.8-5.2 4.7 1.5 6.8L12 17.3l-6.1 3.3 1.5-6.8L2.2 9.1l6.9-.8Z"/></svg></div>
+          <h3>Premium Content</h3><p>Every product is written or produced in-house and reviewed before it's listed.</p>
         </div>
-        <div class="step">
-          <span class="num">02 / DELIVER</span>
-          <h3>Instant email delivery</h3>
-          <p>Instamojo automatically emails the file (or a download link) the moment payment is confirmed — no manual work for you.</p>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></div>
+          <h3>Lifetime Updates</h3><p>Buy once and get every future revision of that product at no extra cost.</p>
         </div>
-        <div class="step">
-          <span class="num">03 / SUPPORT</span>
-          <h3>We're on standby</h3>
-          <p>Didn't get the email or need a redownload link? Customers can reach us any time at hello@digistore.in.</p>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg></div>
+          <h3>Instant Download</h3><p>Files are emailed the moment payment is confirmed — no waiting, no manual steps.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Affordable Price</h3><p>Priced for students and early professionals, with regular seasonal discounts.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div><div class="stat-num" data-target="12400" data-suffix="+">0</div><div class="stat-label">Products Sold</div></div>
+        <div><div class="stat-num" data-target="3200" data-suffix="+">0</div><div class="stat-label">Students</div></div>
+        <div><div class="stat-num" data-target="20">0</div><div class="stat-label">Courses &amp; eBooks</div></div>
+        <div><div class="stat-num" data-target="9800" data-suffix="+">0</div><div class="stat-label">Downloads</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow"><span class="dot"></span> REVIEWS</div>
+        <h2>What customers say</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p>"The copywriting eBook paid for itself with my very first client email. Genuinely practical."</p><div class="testi-person"><div class="testi-avatar">AR</div><div><div class="testi-name">Aditi R.</div><div class="testi-role">Freelance Writer</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p>"Bought the design course on a whim — six modules in and I've already landed two small projects."</p><div class="testi-person"><div class="testi-avatar">KM</div><div><div class="testi-name">Karan M.</div><div class="testi-role">Design Student</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-stars">★★★★☆</div><p>"The Notion template saved me a weekend of setup. Clean, simple, exactly as described."</p><div class="testi-person"><div class="testi-avatar">SP</div><div><div class="testi-name">Sneha P.</div><div class="testi-role">Solo Founder</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p>"Notes arrived in my inbox within seconds of paying. Used them the night before my exam."</p><div class="testi-person"><div class="testi-avatar">RV</div><div><div class="testi-name">Rohit V.</div><div class="testi-role">Engineering Student</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p>"The career bundle was the best ₹899 I've spent this year — resume kit alone got me interviews."</p><div class="testi-person"><div class="testi-avatar">NP</div><div><div class="testi-name">Neha P.</div><div class="testi-role">Recent Graduate</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-stars">★★★★☆</div><p>"Support replied within an hour when my download link expired. Easy, no-fuss experience."</p><div class="testi-person"><div class="testi-avatar">VJ</div><div><div class="testi-name">Vikram J.</div><div class="testi-role">Marketing Executive</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ PREVIEW -->
   <section id="faq">
     <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow"><span class="dot"></span> FAQ</div>
-        <h2>Good to know before you buy.</h2>
+      <div class="section-top-row">
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span> FAQ</div>
+          <h2>Good to know before you buy</h2>
+        </div>
+        <a href="faq.html" class="btn btn-ghost">View full FAQ →</a>
       </div>
-
       <details class="faq-item" open>
         <summary>How do I receive my file after paying?</summary>
         <p>Right after your payment is confirmed on Instamojo, you'll get an email with your download link or attached file. Check your spam folder if it doesn't show up within a few minutes.</p>
@@ -338,12 +281,22 @@
       </details>
       <details class="faq-item">
         <summary>Can I get a refund?</summary>
-        <p>Digital products are generally non-refundable once delivered, but if a file is corrupted or missing, we'll replace it within 7 days — just email us your order ID.</p>
+        <p>Digital products are generally non-refundable once delivered, but if a file is corrupted or missing, we'll replace it within 7 days — see our <a href="refund.html" style="color:var(--accent);">Refund Policy</a>.</p>
       </details>
-      <details class="faq-item">
-        <summary>Do I need an account to buy?</summary>
-        <p>No account needed. Just click Buy, pay, and your product arrives by email.</p>
-      </details>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="wrap">
+      <h2>Get new products and offers first</h2>
+      <p>One short email a month. No spam, unsubscribe any time.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <label for="newsletter-email" class="visually-hidden">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-accent">Subscribe</button>
+      </form>
+      <p id="newsletter-msg" role="status"></p>
     </div>
   </section>
 
@@ -353,7 +306,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a href="#top" class="logo">
+        <a href="index.html" class="logo">
           <span class="logo-mark">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 3V15" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round"/>
@@ -363,29 +316,34 @@
           </span>
           Digi<span class="store">Store</span>
         </a>
-        <p class="tag">A one-page shop for ebooks & courses, built for instant, no-fuss checkout.</p>
+        <p class="tag">Premium digital products for students &amp; professionals — instant download, secure checkout.</p>
       </div>
       <div>
-        <h4>Shop</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="#products">All products</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4>Support</h4>
+        <h4>Categories</h4>
         <ul>
-          <li><a href="mailto:hello@digistore.in">hello@digistore.in</a></li>
-          <li><a href="#faq">Delivery issues</a></li>
-          <li><a href="#faq">Refund policy</a></li>
+          <li><a href="products.html?category=ebooks">eBooks</a></li>
+          <li><a href="products.html?category=courses">Video Courses</a></li>
+          <li><a href="products.html?category=templates">Templates</a></li>
+          <li><a href="products.html?category=notes">Notes</a></li>
+          <li><a href="products.html?category=bundles">Bundles</a></li>
         </ul>
       </div>
       <div>
-        <h4>Follow</h4>
+        <h4>Policies</h4>
         <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">YouTube</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
         </ul>
       </div>
     </div>
@@ -396,5 +354,16 @@
   </div>
 </footer>
 
+<a href="https://wa.me/910000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.4 5.08L2 22l5.2-1.5a9.9 9.9 0 0 0 4.84 1.24h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.32-1.93 1.36-.5.05-1.02.24-3.4-.7-2.86-1.14-4.66-4.03-4.8-4.22-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.98-2.35.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.15.07.14.11.31.02.5-.09.19-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.7 1.18 1.52 1.92 1.05.95 1.93 1.24 2.21 1.38.28.14.44.12.6-.07.16-.19.68-.8.87-1.07.19-.28.37-.23.62-.14.26.09 1.64.78 1.92.92.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+</a>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<div class="sticky-mobile-buy">
+  <a href="products.html" class="btn btn-accent btn-block">Shop All Products →</a>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
